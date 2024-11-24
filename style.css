@@ -1,0 +1,19 @@
+*{
+   margin:0;
+   box-sizing: border-box;
+   margin:0;
+}
+.body{
+   margin:0;
+   padding:0;
+}
+.Header{
+   background-color: #ED271D;
+   height:20vh;
+   display:flex;
+   flex-direction:row;
+}
+.buttons{
+   margin-left:auto;
+   gap:25px
+}
