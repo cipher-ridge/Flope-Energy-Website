@@ -120,7 +120,16 @@ button:hover{
    .courses{
       grid-template-columns: 1fr;
       gap:0.5rem;
-      padding:0.5rem;
+      padding:1rem;
+      max-width:100%;
+      justify-content:center;
+      margin:0 auto;
+      width:100%;
+   }
+   .courses > div{
+      width:100%;
+      max-width:150px;
+      margin:auto;
    }
    .courses h4{
       font-size: 3vh;
@@ -130,21 +139,15 @@ button:hover{
       height:150px;
    }
    .footer{
-      flex-direction:column;
-      height:auto;
-      text-align:center;
-      margin-top:auto;
+     width:100%;
+     height:17vh;
+     margin-top:auto;
+     display:flex;
+     align-items:center;
+     justify-content:space-between;
+     padding:0 1rem;
    }
-   .footer{
-      flex-direction:column;
-      height:auto;
-      text-align:center;
-   }
-   .policy{
-      flex-direction:column;
-      height:auto;
-      text-align: center;
-   }
+   
 }
 /*tablet screen*/
 @media screen and(min-width: 601px) and (max-width: 1024px){
