@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      font-size: 16px; /* Set the base font size for rem calculations */
+    }
+
+    /* Container and Row Styles */
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem; /* Space between rows using rem */
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between; /* Distribute items evenly */
+      width: 100%; /* Full width of the container */
+    }
+
+    /* Course Item Styling */
+    .course-item {
+      width: 30%; /* Each item takes up 30% of the row width */
+      text-align: center; /* Center the content */
+      margin-bottom: 2rem; /* Add some space at the bottom of each course item */
+    }
+
+    .course-item img {
+      width: 100%; /* Make images fill the container */
+      height: auto;
+    }
+
+    .course-item h4 {
+      font-size: 1.4rem; /* Adjust font size using rem */
+      margin: 1rem 0; /* Space between image and title in rem */
+    }
+
+    .course-item input[type="button"] {
+      padding: 1rem 2rem; /* Button padding using rem */
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem; /* Font size for button */
+      border-radius: 0.5rem; /* Slight rounding of button corners */
+      transition: background-color 0.3s ease;
+    }
+
+    .course-item input[type="button"]:hover {
+      background-color: #45a049; /* Change color on hover */
+    }
+
+    /* Sidebar Styling */
+    .sidebar {
+      width: 20rem; /* Sidebar width in rem */
+      background-color: #333;
+      position: fixed;
+      top: 0;
+      left: -20rem;
+      height: 100vh; /* Sidebar height in vh */
+      transition: all 0.3s ease;
+    }
+
+    .sidebar.open {
+      left: 0;
+    }
+
+    /* Sidebar Menu Styling */
+    .sidebar ul {
+      list-style: none;
+      padding: 2rem 0;
+      margin: 0;
+      text-align: center;
+    }
+
+    .sidebar ul li {
+      margin-bottom: 1.5rem; /* Vertical spacing for menu items */
+    }
+
+    /* Main Content Adjustment */
+    .main-content {
+      margin-left: 2rem; /* Space for sidebar */
+      transition: margin-left 0.3s ease;
+    }
+
+    .main-content.sidebar-open {
+      margin-left: 20rem; /* Move main content when sidebar is active */
+    }
+
+    /* Footer Styling */
+    .footer {
+      margin-top: 4rem;
+      text-align: center;
+      font-size: 1rem; /* Footer text size in rem */
+      padding: 2rem 0;
+    }
+
+    .footer .contact p,
+    .footer .policy p {
+      margin: 0.5rem 0;
+    }
+  </style>
+</head>
+<body>
+
+<section>
+  <div class="sidebar-trigger-zone"></div>
+  <div class="sidebar">
+    <h1>Flope Academy</h1>
+    <ul>
+      <li><a href="Homepage.html">Home</a></li>
+      <li><a href="Coursespage.html">Courses</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="main-content">
+    <div class="buttons">
+      <h2>Username</h2>
+      <button>Log out</button>
+    </div>
+    <hr>
+  </div>
+</section>
+
+<!-- Main courses section with grid layout -->
+<div class="container">
+  <div class="row" id="row1">
+    <div class="course-item">
+      <img src="/Images/Img1.jpg" alt="Added Course">
+      <h4>Web Development</h4>
+      <input type="button" value="Learn More">
+    </div>
+    <div class="course-item">
+      <img src="/Images/Img2.jpg" alt="Ongoing Course">
+      <h4>Python Course</h4>
+      <input type="button" value="Continue">
+    </div>
+    <div class="course-item">
+      <img src="/Images/Img3.jpg" alt="Previous Course">
+      <h4>Digital Marketing</h4>
+      <input type="button" value="Revisit">
+    </div>
+  </div>
+  <div class="row" id="row2">
+    <div class="course-item">
+      <img src="/Images/Img4.jpg" alt="Course 4">
+      <h4>JavaScript Basics</h4>
+      <input type="button" value="Learn More">
+    </div>
+    <div class="course-item">
+      <img src="/Images/Img5.jpg" alt="Course 5">
+      <h4>Machine Learning</h4>
+      <input type="button" value="Continue">
+    </div>
+    <div class="course-item">
+      <img src="/Images/Img6.jpg" alt="Course 6">
+      <h4>Graphic Design</h4>
+      <input type="button" value="Revisit">
+    </div>
+  </div>
+  <div class="row" id="row3">
+    <div class="course-item">
+      <img src="/Images/Img7.jpg" alt="Course 7">
+      <h4>AI Fundamentals</h4>
+      <input type="button" value="Learn More">
+    </div>
+    <div class="course-item">
+      <img src="/Images/Img8.jpg" alt="Course 8">
+      <h4>Cybersecurity</h4>
+      <input type="button" value="Continue">
+    </div>
+    <div class="course-item">
+      <img src="/Images/Img9.jpg" alt="Course 9">
+      <h4>Data Science</h4>
+      <input type="button" value="Revisit">
+    </div>
+  </div>
+</div>
+
+<section class="footer">
+  <div class="contact">
+    <p style="margin-bottom:0.3rem;">Email:flopeenergies@gmail.com</p>
+    <p>Address: 27 Muranga</p>
+  </div>
+  <div class="policy">
+    <p>Terms and Conditions</p>
+    <p>Privacy Policy</p>
+  </div>
+</section>
+
+<script>
+  document.querySelector('.sidebar-trigger-zone').addEventListener('mouseenter', () => {
+    document.querySelector('.sidebar').classList.add('open');
+    document.querySelector('.main-content').classList.add('sidebar-open');
+    document.querySelector('.courses').classList.add('sidebar-open');
+  });
+
+  document.querySelector('.sidebar').addEventListener('mouseleave', () => {
+    document.querySelector('.sidebar').classList.remove('open');
+    document.querySelector('.main-content').classList.remove('sidebar-open');
+    document.querySelector('.courses').classList.remove('sidebar-open');
+  });
+</script>
+
+</body>
+</html>
